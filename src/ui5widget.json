@@ -1,0 +1,86 @@
+{
+	"id": "com.SAP.IES.EA.ui5widget",
+	"version": "0.0.1",
+	"name": "IESEAUi5widget",
+	"description": "IES EA ui5widget - For Internal Use Only",
+	"newInstancePrefix": "IES_EA_ui5widget",
+	"icon": "sap-icon://gantt-bars",
+	"vendor": "IES - Enterprise Analytics",
+	"eula": "EULA",
+	"license": "1.0",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "com-ies-ea-ui5widget",
+			"url": "https://alexkhobotov.github.io/sac-ui5-widget/ui5widget.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		},
+		{
+			"kind": "styling",
+			"tag": "com-ies-ea-ui5widget-styling",
+			"url": "https://alexkhobotov.github.io/sac-ui5-widget/ui5widget_styling.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}
+	],
+	"properties": {
+		"color": {
+			"type": "string",
+			"description": "Background color",
+			"default": "white"
+		},
+		"opacity": {
+			"type": "number",
+			"description": "Opacity",
+			"default": 1
+		},
+		"width": {
+			"type": "integer",
+			"default": 100
+		},
+		"height": {
+			"type": "integer",
+			"default": 100
+		}
+	},
+	"methods": {
+		"setColor": {
+			"description": "Sets the background color.",
+			"parameters": [
+				{
+					"name": "newColor",
+					"type": "string",
+					"description": "The new background color"
+				}
+			],
+			"body": "this.color = newColor;"
+		},
+		"getColor": {
+			"returnType": "string",
+			"description": "Returns the background color.",
+			"body": "return this.color;"
+		}
+	},
+	"events": {
+		"onClick": {
+			"description": "Called when the user clicks the component."
+		}
+	},
+	"dataBindings": {
+		"myDataBinding": {
+		  "feeds": [
+			{
+			  "id": "dimensions",
+			  "description": "Dimensions",
+			  "type": "dimension"
+			},
+			{
+			  "id": "measures",
+			  "description": "Measures",
+			  "type": "mainStructureMember"
+			}
+		  ]
+		}
+	}
+}
